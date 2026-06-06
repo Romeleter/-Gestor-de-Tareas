@@ -4,6 +4,11 @@ import "./styles.css";
 
 const estados = ["pendiente", "en progreso", "completada"];
 const prioridades = ["baja", "media", "alta"];
+const iconosVacio = {
+  pendiente: "/pendiente.png",
+  "en progreso": "/progreso.png",
+  completada: "/completada.png",
+};
 const nombresEstado = {
   pendiente: "Pendiente",
   "en progreso": "En Progreso",
@@ -209,7 +214,10 @@ function App() {
     return (
       <main className="login-page">
         <section className="login-box">
-          <h1>Gestor de tareas</h1>
+          <h1>
+            Gestor de tareas
+          <img src="/gestor.png" alt="gestor" style={{width: "42px", verticalAlign: "middle", marginLeft: "25px"}} />
+          </h1>
           <p className="intro">
             Aplicación web para registrar usuarios y organizar tareas diarias.
           </p>
@@ -287,7 +295,7 @@ function App() {
         <div>
           <h1>
           Mis tareas
-          <img src="/tareas.png" alt="tareas" style={{width: "32px", verticalAlign: "middle", marginRight: "8px"}} />
+          <img src="/tareas.png" alt="tareas" style={{width: "42px", position: "relative", top: "5px", marginLeft: "25px"}} />
           </h1>
           <p>Hola, {usuarioActivo.nombre}. Organiza tus actividades del día.</p>
         </div>
@@ -442,7 +450,7 @@ function App() {
               </div>
               {tareasPorEstado.length === 0 && (
                 <div className="vacio">
-                  <span aria-hidden="true">▭</span>
+                  <img src={iconosVacio[estado]} alt={estado} style={{width: "48px", opacity: 0.6}} />
                   <p>No hay tareas en esta sección</p>
                 </div>
               )}
