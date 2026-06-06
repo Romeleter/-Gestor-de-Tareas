@@ -285,7 +285,10 @@ function App() {
     <main className="app">
       <header>
         <div>
-          <h1>Mis tareas</h1>
+          <h1>
+          Mis tareas
+          <img src="/tareas.png" alt="tareas" style={{width: "32px", verticalAlign: "middle", marginRight: "8px"}} />
+          </h1>
           <p>Hola, {usuarioActivo.nombre}. Organiza tus actividades del día.</p>
         </div>
         <button className="secundario" onClick={cerrarSesion}>
